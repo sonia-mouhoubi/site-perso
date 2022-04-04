@@ -1,0 +1,582 @@
+/* *********************************** CSS de BASE ******************************/
+* { 
+	box-sizing : border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    width: 100%;
+}
+body {
+    scroll-behavior: smooth;
+    line-height: 1.8;
+	margin : 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+}
+section {
+    padding: 1rem 0;
+}
+p {
+    margin: 0.8rem 1rem;
+}
+h1, h2, h3, h4 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+h1 {
+    font-size: 2.5rem;
+    color: grey;
+    opacity: 0;
+    animation: opacity 2s 5s forwards; 
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+a {
+	text-decoration : none;
+	font-weight : bold;
+    color: black;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+/************************************ ANIMATIONS DE BASES *******************************/
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes slideInLeft {
+    0% {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+} 
+@keyframes slideInRight {
+    0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+} 
+@keyframes slideInDown {
+    0% {
+        -webkit-transform: translateY(-200%);
+        transform: translateY(-200%);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+/************************************ HEADER *******************************/
+header {
+    background-image: url(../../assets/svg/header.svg);
+    background-repeat: no-repeat;
+    background-color: #f1d9bd;
+}
+header a {
+    opacity: 0;
+    animation: opacity 2s 2s forwards;  
+}
+.logo img {
+    width: 80px;
+    padding: 1rem;
+    opacity: 0;
+    animation: opacity 2s 3s forwards;
+}
+/* Menu BURGER */
+.menu-burger {
+    z-index: 10;
+    position: absolute;
+    top : 2em;
+    right : 3em;
+}
+.menu-burger span {
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 7px;
+    background-color : #ff2a70;
+    border-radius: 25px;
+}
+.menu-burger :nth-child(1) {
+    transform: translateY(10px);
+}
+.menu-burger :nth-child(2) {
+    transform: translateY(-10px);
+}
+#burger[type="checkbox"]:checked ~ .menu-burger :nth-child(1) {
+    transform: rotate(45deg);
+}
+#burger[type="checkbox"]:checked ~ .menu-burger :nth-child(2) {
+    transform: rotate(-45deg);
+}
+#burger[type="checkbox"]:checked ~ .menu-burger :nth-child(3) {
+    display: none;
+}
+.menu-burger :nth-child(1), .menu-burger :nth-child(2) {
+    transition: all 330ms;
+}
+#burger[type="checkbox"]:checked ~ nav {
+    height: 25vh;
+}
+nav {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: ease-in-out 0.2s;
+    display: flex;
+    align-items: center;
+}
+nav ul{
+    list-style-type: none;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+nav a {
+    color: grey;
+}
+
+/************************************ FOOTER *******************************/
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: gray;
+}
+footer p {
+    flex-basis: 100%;
+    text-align: center;
+}
+footer a {
+    color: gray;
+}
+
+/************************************ BIENVENUE *******************************/
+.bienvenue {
+    display: flex;
+    flex-wrap: wrap;    
+    /* background-image: url(../../assets/svg/bienvenue.svg);
+    background-repeat: unset;
+    background-size: auto; */
+    background-color: #f1d9bd;
+    /* background-position: center; */
+    padding-top: 3rem;
+}
+.bienvenue div {
+    width: 90%;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border: white 3px solid;
+    background-color: #faf1e6;    
+}
+.bienvenue img:nth-child(1) {
+    /* position: absolute;
+    top: 0; */
+    width: 10%;
+    margin-left: 2rem;
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.bienvenue img:nth-child(4) {
+    width: 20%;
+    display: block;
+    margin: 1rem auto;
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.bienvenue p {
+    text-shadow: 1px 1px 7px rgba(150, 150, 150, 1);
+    opacity: 0;
+    animation: opacity 2s 5s forwards;
+}
+.bienvenue span {
+    color: #ff2a70;
+    font-weight: bolder;
+}
+
+/*** ANIMATION BIENVENUE *****************/
+/* .box-photo{
+    z-index: 2;
+    position: relative;
+    width: 80%;
+    height: 30vh;
+    border-radius: 50%;
+    margin: auto;
+    background-color: whitesmoke;
+}
+.box-photo::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top : -1rem;
+    left: 2rem;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/img/chaton-tigre.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box-photo span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;  
+} 
+.box-photo span:nth-child(1) {
+    transform:rotate(0deg);
+} 
+.box-photo span:nth-child(2) {
+    transform:rotate(90deg);
+  }
+.box-photo span:nth-child(3) {
+    transform:rotate(180deg);
+}
+.box-photo span:nth-child(4) {
+    transform:rotate(270deg);
+}
+.box-photo span:before {
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 2px;
+    background: #50dfdb;
+    animation: animate 4s linear infinite;
+}
+@keyframes animate {
+    0% {
+    transform:scaleX(0);
+    transform-origin: left;
+    }
+    50%
+    {
+      transform:scaleX(1);
+    transform-origin: left;
+    }
+    50.1%
+    {
+      transform:scaleX(1);
+    transform-origin: right;
+      
+    }
+    100%
+    {
+      transform:scaleX(0);
+    transform-origin: right;
+    }
+} */
+
+/************************************ BOTTOM BIENVENUE *******************************/
+.bottom-bienvenue {
+    background-image: url(../../assets/svg/bottom-bienvenue.svg);
+    background-repeat: no-repeat;
+    height: 8vh;
+}
+
+/************************************ PRESENTATION *******************************/
+.presentation {
+    background-image: url(../../assets/svg/presentation.svg);
+}
+.presentation span {
+    font-weight: bolder;
+}
+.presentation p:last-child {
+    display: block;
+    text-align: center;
+    width: 40%;
+    border-radius: 25px;
+    background-color: #ffbbb8;
+}
+
+/************************************ COMPETENCES *******************************/
+.competences {
+    background-image: linear-gradient(rgba(235, 220, 228, 0.7), rgb(221, 219, 215, 0.4)),url(../../assets/img/background-competence.png);
+    background-position: fixed;
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    padding: 3rem;
+}
+.img-competences {
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 1rem auto;
+  }
+.competences h3 {
+    font-size: 1.5rem;
+}
+.competences div:nth-child(3){ 
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    padding: 0.5rem;
+    background-color: #fff;
+}
+.competences div:nth-child(3)::before { 
+    content: "";
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 3px solid #ffbbb8;
+
+}
+.soft-skills {
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.soft-skills img {
+    width: 100px;
+    margin: 1rem;
+}
+
+/************************************ PROJETS *******************************/
+.projets figure {
+    position: relative;
+    cursor: pointer;
+    cursor: auto;
+    width: 90%;
+    height: auto;
+    border: solid 2px #c6bdc2;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+.projets figcaption {
+    background-color: #fff;
+    text-align: center;
+}
+
+/************************************ PARCOURS *******************************/
+.parcours {
+    background-image: linear-gradient(rgba(235, 220, 228, 0.5), rgba(204, 199, 189, 1)),url(../../assets/img/illustration-grand-ecran.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+    padding-bottom: 2rem;
+}
+.parcours div:nth-child(2) {
+    color: #ff2a70;
+    font-weight: bolder;
+}
+.parcours div:nth-child(3) {
+    background-color: #ff2a7134;
+}
+.parcours span {
+    font-weight: bolder;
+}
+
+/************************************ PROJETS *******************************/
+.projets {
+    background-image: url(../../assets/svg/projets.svg);
+}
+
+/************************************ VERSION DEKSTOP *******************************/
+/************************************ VERSION DEKSTOP *******************************/
+/************************************ VERSION DEKSTOP *******************************/
+
+@media screen and (min-width: 768px){
+/************************************ CSS de BASE *******************************/
+    body {
+        font-size: 1rem;
+    }
+/************************************ HEADER *******************************/
+    header {
+        display: flex;
+        /* flex-wrap: wrap; */
+        height: 25vh;
+    }
+    .logo img {
+        width: 100px;
+    }
+    nav {
+        width: 80%;
+        height: 10vh;
+        /* background-color: red; */
+    }
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav li {
+        padding-left: 4rem;
+    }
+    .menu-burger {
+        display: none;
+    }
+
+/************************************ FOOTER *******************************/
+   
+
+/************************************ BIENVENUE *******************************/
+    .bienvenue {
+        position: relative;
+        display: flex;
+    }
+    .bienvenue div {
+        position: relative;
+        width: 30%;
+        z-index: 10;
+        -webkit-animation-name: slideInDown;
+        animation-name: slideInDown;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    .bienvenue div::after {
+        z-index: -2;
+        content: "";
+        position: absolute;
+        top: -2rem;
+        width: 200px;
+        height: 200px;
+        background-color: whitesmoke;
+    }
+    .bienvenue div::before {
+        z-index: -5;
+        content: "";
+        position: absolute;
+        bottom: -3.5rem;
+        left: -15rem;
+        background: linear-gradient(45deg, #fff 12.5%, transparent 12.5%, transparent 37.5%, #fff 37.5%, #fff 62.5%, transparent 62.5%, transparent 87.5%, #fff 87.5%);
+        background-size: 20px 20px;
+        background-position: 50px 50px;
+        width: 400px;
+        height: 200px;
+    }
+    .bienvenue p {
+        z-index: 100;
+    }
+    .bienvenue img:nth-child(1) {
+        width: 10%;
+    
+    }
+    .bienvenue img:nth-child(4) {
+        width: 15%;
+        margin: 1rem 0.5rem;
+    }
+    
+/*** ANIMATION BIENVENUE ***********/
+    /* .box-photo {
+        width: 20vw !important;
+    } */
+
+/************************************ BOTTOM BIENVENUE *******************************/
+    .bottom-bienvenue {
+        background-image: url(../../assets/svg/bottom-bienvenue.svg);
+        background-repeat: no-repeat;
+        height: 20vh;
+    }
+
+/************************************ PRESENTATION *******************************/
+    .presentation {
+        display: flex; 
+        flex-wrap: wrap;
+    }
+    .presentation h2, .presentation h3 {
+        flex-basis: 100%;
+    }
+    .presentation img {
+        width: 30vw;
+        margin: auto;
+    }
+    .presentation div {
+        width: 50%;
+    }
+
+/************************************ COMPETENCES *******************************/
+    .competences {
+        display: flex; 
+        flex-wrap: wrap;
+    }
+    .competences h2 {
+        flex-basis: 100%;
+    }
+    .soft-skills {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: space-around;
+    }
+    .img-competences {
+        width: 50%;
+        height: 400px;
+    }
+    .competences div:nth-child(3) { 
+        width: 25%;
+        height: 95%;
+    }
+    
+/************************************ PROJET *******************************/
+    .projets div {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        padding: 2rem;
+        /* width: 60%; */
+    }
+    .projets h2 {
+        flex-basis: 100%;
+    }
+    .projets figure {
+        width: 30%;
+    }
+
+/************************************ PARCOURS *******************************/
+    .parcours {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .parcours h2 {
+        flex-basis: 100%;
+    }
+    .parcours h3 {
+        font-size: 1.5rem;
+    }
+    .parcours div {
+        width: 30%;
+        margin: auto;
+    }
+  
+   
+}     
+
+     
+
+
