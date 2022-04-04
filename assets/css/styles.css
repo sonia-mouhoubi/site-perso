@@ -176,11 +176,7 @@ footer a {
 .bienvenue {
     display: flex;
     flex-wrap: wrap;    
-    /* background-image: url(../../assets/svg/bienvenue.svg);
-    background-repeat: unset;
-    background-size: auto; */
     background-color: #f1d9bd;
-    /* background-position: center; */
     padding-top: 3rem;
 }
 .bienvenue div {
@@ -193,8 +189,6 @@ footer a {
     background-color: #faf1e6;    
 }
 .bienvenue img:nth-child(1) {
-    /* position: absolute;
-    top: 0; */
     width: 10%;
     margin-left: 2rem;
     -webkit-animation-name: slideInLeft;
@@ -224,80 +218,6 @@ footer a {
     color: #ff2a70;
     font-weight: bolder;
 }
-
-/*** ANIMATION BIENVENUE *****************/
-/* .box-photo{
-    z-index: 2;
-    position: relative;
-    width: 80%;
-    height: 30vh;
-    border-radius: 50%;
-    margin: auto;
-    background-color: whitesmoke;
-}
-.box-photo::before {
-    z-index: 1;
-    content: "";
-    position: absolute;
-    top : -1rem;
-    left: 2rem;
-    width: 100%;
-    height: 100%;
-    background-image: url(../../assets/img/chaton-tigre.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.box-photo span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    box-sizing: border-box;  
-} 
-.box-photo span:nth-child(1) {
-    transform:rotate(0deg);
-} 
-.box-photo span:nth-child(2) {
-    transform:rotate(90deg);
-  }
-.box-photo span:nth-child(3) {
-    transform:rotate(180deg);
-}
-.box-photo span:nth-child(4) {
-    transform:rotate(270deg);
-}
-.box-photo span:before {
-    content: '';
-    position: absolute;
-    width:100%;
-    height: 2px;
-    background: #50dfdb;
-    animation: animate 4s linear infinite;
-}
-@keyframes animate {
-    0% {
-    transform:scaleX(0);
-    transform-origin: left;
-    }
-    50%
-    {
-      transform:scaleX(1);
-    transform-origin: left;
-    }
-    50.1%
-    {
-      transform:scaleX(1);
-    transform-origin: right;
-      
-    }
-    100%
-    {
-      transform:scaleX(0);
-    transform-origin: right;
-    }
-} */
 
 /************************************ BOTTOM BIENVENUE *******************************/
 .bottom-bienvenue {
@@ -439,10 +359,7 @@ footer a {
     }
     .menu-burger {
         display: none;
-    }
-
-/************************************ FOOTER *******************************/
-   
+    }   
 
 /************************************ BIENVENUE *******************************/
     .bienvenue {
@@ -493,11 +410,6 @@ footer a {
         margin: 1rem 0.5rem;
     }
     
-/*** ANIMATION BIENVENUE ***********/
-    /* .box-photo {
-        width: 20vw !important;
-    } */
-
 /************************************ BOTTOM BIENVENUE *******************************/
     .bottom-bienvenue {
         background-image: url(../../assets/svg/bottom-bienvenue.svg);
@@ -549,7 +461,6 @@ footer a {
         flex-wrap: wrap;
         margin: auto;
         padding: 2rem;
-        /* width: 60%; */
     }
     .projets h2 {
         flex-basis: 100%;
